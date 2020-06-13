@@ -1,0 +1,58 @@
+.App-logo {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.Player-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.Players-list .Players-list-count {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.Player-picture-notfound {
+    display: inline-block;
+    margin: 20px;
+}
+
+.Player-picture-notfound div {
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+
+.Player-picture-notfound h5 {
+    float: left;
+    line-height: 40px;
+    margin-left: 10px;
+    color: #999999;
+}
+
+.Player-details {
+    margin: 20px;
+}
+
+.Player-details .MuiCardMedia-img {
+    object-fit: contain;
+}
+
+.Player-search {
+    padding: 2px 4px;
+    display: flex;
+    margin: 20px 10px 10px 10px
+    /*alignItems: "center";*/
+    /*width: 400px;*/
+}
+
+.Player-search-input {
+    width: 100%;
+}
+
+.Player-search-icon {
+    margin-top: 4px;
+    color: rgba(0,0,0,0.55);
+}
