@@ -9,7 +9,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 
 
-class Search extends Component {
+export class Search extends Component {
 
     constructor(props) {
         super(props);

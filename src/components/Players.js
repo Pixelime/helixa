@@ -63,11 +63,6 @@ class Players extends Component {
         return (
             <Fragment>
                 <Search/>
-
-                {/*<List className="Players-list">*/}
-                {/*    <ListSubheader>Total Players: {pagination.total_count || 0}</ListSubheader>*/}
-                {/*    {players}*/}
-                {/*</List>*/}
                 <List className="Players-list">
                     <ListSubheader className="Players-list-count">Total Players Found: <strong>{pagination.total_count || 0}</strong></ListSubheader>
                     <InfiniteScroll
@@ -80,20 +75,8 @@ class Players extends Component {
                                 <strong>No more players to show!</strong>
                             </p>
                         }
-                        // // below props only if you need pull down functionality
-                        // refreshFunction={this.props.fetchPlayers}
-                        // pullDownToRefresh
-                        // pullDownToRefreshContent={
-                        //     <h3 style={{textAlign: 'center'}}>&#8595; Pull down to refresh</h3>
-                        // }
-                        // releaseToRefreshContent={
-                        //     <h3 style={{textAlign: 'center'}}>&#8593; Release to refresh</h3>
-                        // }
-                    >
-                        {players}
-                    </InfiniteScroll>
+                    >{players}</InfiniteScroll>
                 </List>
-
             </Fragment>
         );
     }
