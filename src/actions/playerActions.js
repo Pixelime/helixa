@@ -6,7 +6,7 @@ const API_PLAYER_PICTURE_URL = "https://nba-players.herokuapp.com/players";
 
 
 export function fetchPlayers(query = '', page = 1) {
-    return function (dispatch, getState) {
+    return function (dispatch) {
         const params = new URLSearchParams({"search": query, "page": page}),
             url = `${(new URL(API_PLAYERS_URL)).href}?${params.toString()}`;
 
@@ -15,7 +15,7 @@ export function fetchPlayers(query = '', page = 1) {
             data: {query, page}
         });
 
-        fetch(url)
+        return fetch(url)
             .then(res => res.json())
             .then(function (payload) {
                 dispatch({
@@ -37,7 +37,7 @@ export function fetchPlayerDetails(playerId) {
             data: playerId
         });
 
-        fetch(`${API_PLAYERS_URL}/${playerId}`)
+        return fetch(`${API_PLAYERS_URL}/${playerId}`)
             .then(res => (res.status === 200 ? res.json() : {}))
             .then(function (payload) {
                 dispatch({
@@ -56,7 +56,7 @@ export function fetchPlayerDetails(playerId) {
 
 export function fetchPlayerStats(playerId) {
     return function (dispatch) {
-        fetch(`${API_PLAYERS_SEASON_AVERAGES_URL}?player_ids[]=${playerId}`)
+        return fetch(`${API_PLAYERS_SEASON_AVERAGES_URL}?player_ids[]=${playerId}`)
             .then(res => res.json())
             .then(payload => dispatch({
                 type: TYPES.FETCHED_PLAYER_STATS,
@@ -67,7 +67,7 @@ export function fetchPlayerStats(playerId) {
 
 export function fetchPlayerPicture(playerFirstName, playerLastName) {
     return function (dispatch) {
-        fetch(`${API_PLAYER_PICTURE_URL}/${playerLastName.toLowerCase()}/${playerFirstName.toLowerCase()}`)
+        return fetch(`${API_PLAYER_PICTURE_URL}/${playerLastName.toLowerCase()}/${playerFirstName.toLowerCase()}`)
             .then(res => res.blob())
             .then(image => {
                 dispatch({

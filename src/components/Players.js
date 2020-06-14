@@ -31,13 +31,9 @@ class Players extends Component {
         if (nextPage !== null) {
             this.props.fetchPlayers(query, nextPage);
         }
-        // this.props.fetchPlayers(this.props.query||"",this.props.pagination.)
     }
 
     render() {
-
-        console.log("render", this.props.players.length);
-
         const players = this.props.players.map(player => {
 
             const url = `/${player.id}`,
